@@ -1,0 +1,21 @@
+<form (ngSubmit)="search()">
+  <input [(ngModel)]="searchTerm" type="text" name="searchTerm">
+  <button type="submit">Search</button>
+</form>
+
+<!--<div *ngIf="artworks">-->
+<!--  <div *ngFor="let artwork of artworks">-->
+<!--    <img [src]="artwork.webImage.url">-->
+<!--    <p>{{ artwork.title }}</p>-->
+<!--    <p>{{ artwork.principalOrFirstMaker }}</p>-->
+<!--  </div>-->
+<!--</div>-->
+<div class="card-columns">
+  <div class="card" *ngFor="let artwork of artworks">
+    <img class="card-img-top" [src]="artwork.webImage.url" [alt]="artwork.title">
+    <div class="card-body">
+      <h5 class="card-title">{{ artwork.title }}</h5>
+      <p class="card-text">{{ artwork.principalOrFirstMaker }}</p>
+    </div>
+  </div>
+</div>
